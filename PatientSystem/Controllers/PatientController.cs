@@ -10,6 +10,11 @@ namespace PatientSystem.Controllers
     {
         public ViewResult Index()
         {
+            return View("PatientRegistration");
+        }
+
+        public ViewResult PatientList()
+        {
             return View();
         }
     }
