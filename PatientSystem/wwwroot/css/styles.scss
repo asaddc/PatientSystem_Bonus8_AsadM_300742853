@@ -10,30 +10,12 @@ body {
 		grid-template-columns: 2fr 2fr;
 	}
 
+	img {
+		float: right;
+		height: 300px;
+	}
+
 	nav {
-		background-color: $bg-color;
-		height: 3.5rem;
-
-		ul {
-			margin-right: 2rem;
-			display: flex;
-			list-style-type: none;
-			justify-content: space-between;
-
-			li {
-				a {
-					color: #fff;
-					text-decoration: none;
-
-					&:hover {
-						border-bottom: 3px solid #fff;
-						color: #fff;
-						transition: 0.1s all ease-in-out;
-					}
-				}
-			}
-		}
-
-		box-shadow: 0.5rem 0.5rem 0.5rem;
+		background-color: $bg-color !important;
 	}
 }
