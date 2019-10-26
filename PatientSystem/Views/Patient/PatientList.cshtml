@@ -1,11 +1,11 @@
-﻿@model IOrderedEnumerable<Patient>
+﻿@model IEnumerable<Patient>
 @{
     ViewBag.Title = "Patient List";
 }
 
 <h2>Patient List</h2>
 
-<table>
+<table class="table">
     <thead>
         <tr>
             <th>Patient Name</th>
@@ -15,13 +15,13 @@
             <th>Has Insurance?</th>
             <th>Had Previous Operation?</th>
             <th>Marital Status</th>
+            <th>Creation Time</th>
         </tr>
     </thead>
     <tbody>
         @foreach (Patient patient in Model)
         {
             <tr>
-
                 <td>@patient.Name</td>
                 <td>@patient.Age</td>
                 <td>@patient.Address</td>
@@ -29,8 +29,8 @@
                 <td>@patient.HasInsurance</td>
                 <td>@patient.HadPreviousOperation</td>
                 <td>@patient.MaritalStatus</td>
+                <td>@patient.CreationTime</td>
             </tr>
-
         }
     </tbody>
 </table>

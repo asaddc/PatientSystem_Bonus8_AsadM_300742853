@@ -9,25 +9,29 @@ namespace PatientSystem.Controllers
 {
     public class PatientController : Controller
     {
+        [HttpGet]
         public ViewResult Index()
         {
             return View("PatientRegistration");
         }
 
-        [HttpGet]
-        public ViewResult PatientList()
+        [HttpPost]
+        public ViewResult Index(Patient patient)
         {
-            //var patientsOrderedByName = PatientRepository.Patients.OrderBy(p => p.Name);
-
-            //return View(patientsOrderedByName);
-            return View();
+            patient.CreationTime = DateTime.Now;
+            PatientRepository.AddPatient(patient);
+            return View("Thanks", patient);
         }
 
-        [HttpPost]
-        public ViewResult PatientList(Patient patient)
+        public ViewResult Thanks(Patient patient)
         {
-            PatientRepository.AddPatient(patient);
-            return View();
+            return View(patient);
+        }
+
+        public ViewResult PatientList()
+        {
+            var patientsOrderedByName = PatientRepository.Patients.OrderBy(p => p.Name);
+            return View(patientsOrderedByName);
         }
     }
 }

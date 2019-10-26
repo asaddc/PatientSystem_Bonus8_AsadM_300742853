@@ -9,13 +9,19 @@ namespace PatientSystem.Models
     {
         private static List<Patient> patients;
 
+        static PatientRepository()
+        {
+            patients = new List<Patient>();
+        }
+
         public static List<Patient> Patients
         {
             get { return patients; }
         }
 
-        public static void AddPatient(Patient patient) => Patients.Add(patient);
-
-        public static Patient GetPatient(int id) => Patients[id];
+        public static void AddPatient(Patient patient)
+        {
+            Patients.Add(patient);
+        }
     }
 }
