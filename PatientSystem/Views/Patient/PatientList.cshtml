@@ -1,5 +1,36 @@
-﻿@{
+﻿@model IOrderedEnumerable<Patient>
+@{
     ViewBag.Title = "Patient List";
 }
 
 <h2>Patient List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Occupation</th>
+            <th>Has Insurance?</th>
+            <th>Had Previous Operation?</th>
+            <th>Marital Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Patient patient in Model)
+        {
+            <tr>
+
+                <td>@patient.Name</td>
+                <td>@patient.Age</td>
+                <td>@patient.Address</td>
+                <td>@patient.Occupation</td>
+                <td>@patient.HasInsurance</td>
+                <td>@patient.HadPreviousOperation</td>
+                <td>@patient.MaritalStatus</td>
+            </tr>
+
+        }
+    </tbody>
+</table>

@@ -15,5 +15,6 @@ namespace PatientSystem.Models
         public bool HasInsurance { get; set; }
         public bool HadPreviousOperation { get; set; }
         public string MaritalStatus { get; set; }
+        public DateTime CreationTime { get; set; }
     }
 }
